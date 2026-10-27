@@ -18,6 +18,7 @@ sync:  ## Install project dependencies including the sagemaker-docker group and 
 first-setup:  ## Perform first-time setup by syncing dependencies and installing pre-commit hooks
 	@curl -LsSf https://astral.sh/uv/install.sh | sh
 	$(MAKE) sync
+	@touch .env
 
 .PHONY: lint-format
 lint-format:
@@ -30,4 +31,3 @@ reset-env: ## Reset the environment by removing the virtual environment and rein
 	rm -rf .venv
 	$(UV) cache clean
 	$(MAKE) sync
-	$(MAKE) test
