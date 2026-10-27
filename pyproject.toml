@@ -1,0 +1,48 @@
+[project]
+name = "agents-hands-on"
+version = "0.1.0"
+description = "Example Notebooks on RAG and Agentic AI in Action"
+readme = "README.md"
+authors = []
+requires-python = ">=3.13"
+dependencies = [
+    "accelerate>=1.15.0",
+    "bitsandbytes>=0.50.2",
+    "chromadb>=1.5.9",
+    "ddgs>=9.16.1",
+    "duckduckgo-search>=8.1.1",
+    "google-generativeai>=0.8.6",
+    "google-search-results>=2.4.2",
+    "iprogress>=0.4",
+    "ipykernel>=7.4.0",
+    "ipywidgets>=8.1.9",
+    "jupyter>=1.1.1",
+    "langchain>=1.4.7",
+    "langchain-chroma>=1.1.0",
+    "langchain-community>=0.4.2",
+    "langchain-core>=1.7.0",
+    "langchain-google-genai>=4.4.2",
+    "langchain-huggingface>=1.2.3",
+    "langchain-openai>=1.7.2",
+    "langgraph>=1.2.18",
+    "pandas>=3.1.0",
+    "python-dotenv>=1.2.4",
+    "sentence-transformers>=6.2.0",
+    "torch>=2.14.1",
+    "transformers>=5.21.0",
+    "wikipedia>=1.4.0",
+]
+
+[project.scripts]
+agents-hands-on = "agents_hands_on:main"
+
+[build-system]
+requires = ["uv_build>=0.12.15,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.7.0",
+]
+[tool.ruff.lint.per-file-ignores]
+"*.ipynb" = ["BLE001", "TRY002", "E722"]
